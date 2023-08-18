@@ -1,0 +1,179 @@
+/* Importing the Inter font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* CSS Variables */
+:root {
+	--bg-color: rgba(0, 6, 39, 1);
+	--main-color: rgba(67, 151, 200);
+	--light-color: rgba(206, 206, 206, 1);
+	--dark-color: rgba(0, 0, 0, 1);
+	--gray-color: rgba(152, 152, 153, 1);
+	--dark-gray-color: rgba(66, 67, 73, 1);
+}
+
+/* Global Styles */
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+	font-family: "Inter", sans-serif;
+	background-color: var(--bg-color);
+	color: var(--light-color);
+}
+
+/* Paragraph Styles */
+p {
+	margin-bottom: 16px;
+	line-height: 32px;
+	font-weight: 500;
+}
+
+p.large {
+	font-size: 20px;
+	line-height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+	p.large {
+		font-size: 16px;
+		line-height: 32px;
+	}
+}
+
+/* Container Styles */
+.container {
+	max-width: 540px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 64px 24px;
+	min-height: calc(100vh - 216px);
+}
+
+/* Action Bar Styles */
+.action-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 48px 24px;
+	background-color: var(--bg-color);
+	text-align: center;
+}
+
+.action-bar > p {
+	margin-bottom: 24px;
+}
+
+/* Action Button Styles */
+.action-button {
+	width: 64px;
+	height: 64px;
+	background-color: var(--main-color);
+	color: var(--dark-color);
+	border-radius: 50%;
+	font-size: 24px;
+	outline: 2px solid rgba(71, 39, 100, 1);
+	outline-offset: 8px;
+	cursor: pointer;
+	-webkit-transition: all 0.1s ease-out;
+	-o-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+	-webkit-animation: ping 1s infinite;
+	animation: ping 1s infinite;
+}
+
+.action-button:hover {
+	-webkit-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+	-webkit-animation: none;
+	animation: none;
+}
+
+.action-button:active {
+	-webkit-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	-webkit-animation: none;
+	animation: none;
+}
+
+.action-button.animation-none {
+	-webkit-animation: none;
+	animation: none;
+}
+
+/* Style the blinking cursor */
+.blinking-cursor::after {
+	content: "|";
+	display: inline-block;
+	width: 1px;
+	-webkit-animation: blink 0.75s infinite;
+	animation: blink 0.75s infinite;
+}
+
+/* Text Styles */
+.text-light {
+	color: var(--light-color);
+}
+
+.text-gray {
+	color: var(--gray-color);
+}
+
+.text-dark-gray {
+	color: var(--dark-gray-color);
+}
+
+/* Keyframes for Button Animation */
+@-webkit-keyframes ping {
+	50% {
+		-webkit-transform: scale(0.98);
+		transform: scale(0.98);
+		opacity: 0.9;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		outline-offset: 8px;
+	}
+}
+@keyframes ping {
+	50% {
+		-webkit-transform: scale(0.98);
+		transform: scale(0.98);
+		opacity: 0.9;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		outline-offset: 8px;
+	}
+}
+
+/* Define the blinking animation */
+@-webkit-keyframes blink {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
